@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# this script tags your mp3 albums and renames the files
+# uses output file produced by the 'mp3cddb' script
+#
+# author  : Andras BALI <drewie@bigfoot.com>
+# license : GPL
+# version : 0.1
+
+uppercase () {
+    for k in $*; do echo -n `echo $k|cut -b1|tr [:lower:] [:upper:]``echo $k|cut -b2-`' ';done \
+    | sed 's/ $//g'
+}
+
+formatstr () {
+    echo $* | tr -d "'?!.&,/+*:()[]{}\"" | tr "ˆ¸Ûı˙È·˚Ì÷‹”’⁄…¡€Õ " "ouooueauiOUOOUEAUI_" | tr -s '_'
+}
+
+seq () {
+    N=$1
+    while [ $N -le $2 ]; do
+	echo $N
+	N=`expr $N + 1`
+    done
+}
+
+echo -n "processing $1 "
+
+    album=$(uppercase `egrep ^ALBUM $1 | cut -d' ' -f2-`)
+    artist_album=$(uppercase `egrep ^ARTIST_ALBUM $1 | cut -d' ' -f2-`)
+    year=$(egrep ^YEAR $1 | cut -d' ' -f2-)
+    genre=$(egrep ^GENRE $1 | cut -d' ' -f2-)
+    if [ -z "$genre" ]; then genre='%12'; fi
+
+
+echo "($artist_album / $album)..."
+
+    files=$(grep '.FILE: ' $1 | grep -v '#' | wc -l | tr -d ' ')
+    
+echo tagging $files tracks...
+    
+for i in `seq 1 $files`; do
+    file=$(egrep "^$i.FILE: " $1 | cut -d' ' -f2-)
+    title=$(uppercase `egrep "^$i.TITLE: " $1 | cut -d' ' -f2-`)
+    artist=$(uppercase `egrep "^$i.ARTIST: " $1 | cut -d' ' -f2-`)
+    if [ -z "$artist" ]; then artist=$artist_album; fi
+    comment=$(uppercase `egrep "^$i.COMMENT: " $1 | cut -d' ' -f2-`)
+
+    mp3info -d "$file"
+
+    if [ "`echo $genre | cut -b1`" = '%' ]; then
+	mp3info -y "$year" -g "`echo $genre | cut -b2-`" -a "$artist" -l "$album" -t "$title" \
+	        -n 0 -c "$comment" "$file" 
+    else
+	mp3info -y "$year" -g "$genre" -a "$artist" -l "$album" -t "$title" -c "$comment"   \
+	        -n 0 "$file" | grep -v 'G : '
+    fi
+
+    if [ $i -le 9 ]; then 
+	j=$(echo '0'$i)
+    else
+        j=$(echo $i)
+    fi
+    
+    echo $j. "$artist" / "$title" "($album)"
+    
+    if [ "$artist" = "$artist_album" ]; then
+	newfile=`formatstr $j-$title`.mp3
+    else
+	newfile=`formatstr $j-$artist-$title`.mp3
+    fi
+
+    if [ "$file" != "$newfile" ]; then 
+	mv "$file" "$newfile"
+    fi
+done
+
+echo "done."
+
