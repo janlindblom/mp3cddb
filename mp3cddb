@@ -3,13 +3,15 @@
 # mp3cddb
 # -------
 # originally  : mp3tocddb.pl by Meng Weng Wong (MPEG::MP3Info)
-# modified by : Andras BALI <drewie@bigfoot.com>
+# modified by : Andras BALI <drewie@bigfoot.com> (version 0.1)
+# modified by : Jan Lindblom <lindblom.jan@gmail.com>
 # license     : GPL
-# version     : 0.1
+# version     : 0.2
 
 use strict;
+use warnings;
 use vars qw($dir);
-use MPEG::MP3Info;
+use MP3::Info;
 use CDDB;
 use File::Basename;
 
