@@ -88,6 +88,9 @@
    
    Changelog
    ---------
+   Feb 19 2011
+     * Modified the mp3cddb script to use MP3::Info.
+     * Added [Â‰≈ƒ] to formatstr() in mp3cddbtag.
    Mar 10 2001
      * Modified the mp3cddb script so that it now uses freedb.freedb.org
        as the CDDB server since cddb.com became commercial. Unfortunately
