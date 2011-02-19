@@ -3,9 +3,10 @@
 # this script tags your mp3 albums and renames the files
 # uses output file produced by the 'mp3cddb' script
 #
-# author  : Andras BALI <drewie@bigfoot.com>
-# license : GPL
-# version : 0.1
+# author      : Andras BALI <drewie@bigfoot.com> (version 0.1)
+# modified by : Jan Lindblom <lindblom.jan@gmail.com>
+# license     : GPL
+# version     : 0.2
 
 uppercase () {
     for k in $*; do echo -n `echo $k|cut -b1|tr [:lower:] [:upper:]``echo $k|cut -b2-`' ';done \
@@ -13,7 +14,7 @@ uppercase () {
 }
 
 formatstr () {
-    echo $* | tr -d "'?!.&,/+*:()[]{}\"" | tr "öüóõúéáûíÖÜÓÕÚÉÁÛÍ " "ouooueauiOUOOUEAUI_" | tr -s '_'
+    echo $* | tr -d "'?!.&,/+*:()[]{}\"" | tr "åäöüóõúéáûíÅÄÖÜÓÕÚÉÁÛÍ " "aaouooueauiAAOUOOUEAUI_" | tr -s '_'
 }
 
 seq () {
