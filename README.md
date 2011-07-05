@@ -1,5 +1,4 @@
-
- # mp3cddb
+# mp3cddb
    
 ## About
    Mp3cddb is a small perl script that helps you recognizing your unknown
@@ -53,7 +52,7 @@
    your needs, then run mp3cddbtag to tag & rename your files.
    
    Example:
-   ```
+   
    $ ls -la
    total 24527
    drwxr-xr-x    2 bali     users        1024 Feb 24 15:21 .
@@ -81,13 +80,13 @@
    Album:   Psyché Rock                    Year:
    Comment:                                Genre: Rock [17]
    $
-   ```
+   
 ## Changelog
-   Feb 19 2011
+*   Feb 19 2011
      * Modified the mp3cddb script to use MP3::Info.
      * Added [åäÅÄ] to formatstr() in mp3cddbtag.
      
-   Mar 10 2001
+*   Mar 10 2001
      * Modified the mp3cddb script so that it now uses freedb.freedb.org
        as the CDDB server since cddb.com became commercial. Unfortunately
        freedb does not hold as much information as cddb does, but it
@@ -96,7 +95,7 @@
      * Included license information.
      * Updated documentation.
        
-   Feb 24 2001
+*   Feb 24 2001
      * Applied patch from Frederic Crozat <fred@crozat.net> so that mp3cddb saves the
        genre information from the CDDB entry and mp3cddbtag uses mp3info
        from Ricardo Cerqueria and Cedric Tefft.
@@ -105,7 +104,7 @@
        mp3cddbtag only try to rename the files if their name changed.
      * Updated the documentation.
        
-   Nov 25 1999
+*   Nov 25 1999
      * First release
    
 ## Author
