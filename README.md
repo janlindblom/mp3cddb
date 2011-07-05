@@ -129,9 +129,9 @@
    problems, found some bugs, or just want to tell me what you think of
    it.
    
-     * E-mail: drewie@bigfoot.com
-     * IRC: [drewie] on iRCnet
-     _________________________________________________________________
+   * E-mail: drewie@bigfoot.com
+   * IRC: [drewie] on iRCnet
+   _________________________________________________________________
    
    last updated: 03/10/2001
 
