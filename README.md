@@ -1,9 +1,7 @@
 
-   mp3cddb
-   -------
+ # mp3cddb
    
-   About
-   -----
+## About
    Mp3cddb is a small perl script that helps you recognizing your unknown
    music albums. If you have a complete music album in MPEG layer III
    (.mp3) compressed audio format, but you don't know its
@@ -24,8 +22,7 @@
    information to the .mp3 file using the ID3v1 format) and renames your
    .mp3 files.
    
-   Requirements
-   ------------
+## Requirements
    This system has been written and tested on a Linux system and it
    requires the GNU Bourne Again Shell (bash). This is included in the
    most of Linux distributions, but is also downloadable at
@@ -46,8 +43,7 @@
    the following packages: perl, mp3info. For more information, visit the
    website of your distribution.
    
-   Usage
-   -----
+## Usage
    First, try to identify your files using mp3cddb. Please note, that the
    order of the files does matter, since CDDB stores the information
    about albums using an identification number, which is calculated using
@@ -57,7 +53,7 @@
    your needs, then run mp3cddbtag to tag & rename your files.
    
    Example:
-   
+   ```
    $ ls -la
    total 24527
    drwxr-xr-x    2 bali     users        1024 Feb 24 15:21 .
@@ -68,29 +64,29 @@
    -rw-r--r--    1 bali     users     5471960 Feb 16  2000 4.mp3
    $ mp3cddb *
    searching for discid: 2a04e004, total tracks: 4, total time: 1248 ...
-   match: rock      2e04e904        Pierre Henry - Michel Colombier / PsychÈ Rock
+   match: rock      2e04e904        Pierre Henry - Michel Colombier / Psych√© Rock
    saving information to cddbinfo.txt...
    $ mp3cddbtag cddbinfo.txt
-   processing cddbinfo.txt (Pierre Henry - Michel Colombier / PsychÈ Rock)...
+   processing cddbinfo.txt (Pierre Henry - Michel Colombier / Psych√© Rock)...
    tagging 4 tracks...
-   01. Pierre Henry - Michel Colombier / PsychÈ Rock (Malpaso Radio Edit) (PsychÈ Rock)
-   02. Pierre Henry - Michel Colombier / PsychÈ Rock (Malpaso Mix) (PsychÈ Rock)
-   03. Pierre Henry - Michel Colombier / PsychÈ Rock (Metal Time Machine Edit) (PsychÈ Rock)
-   04. Pierre Henry - Michel Colombier / PsychÈ Rock (PsychÈ Dub) (PsychÈ Rock)
+   01. Pierre Henry - Michel Colombier / Psych√© Rock (Malpaso Radio Edit) (Psych√© Rock)
+   02. Pierre Henry - Michel Colombier / Psych√© Rock (Malpaso Mix) (Psych√© Rock)
+   03. Pierre Henry - Michel Colombier / Psych√© Rock (Metal Time Machine Edit) (Psych√© Rock)
+   04. Pierre Henry - Michel Colombier / Psych√© Rock (Psych√© Dub) (Psych√© Rock)
    done.
    $ mp3info 01*mp3
    File: 01-Psyche_Rock_Malpaso_Radio_Edit.mp3
-   Title:   PsychÈ Rock (Malpaso Radio Edi Track:
+   Title:   Psych√© Rock (Malpaso Radio Edi Track:
    Artist:  Pierre Henry - Michel Colombie
-   Album:   PsychÈ Rock                    Year:
+   Album:   Psych√© Rock                    Year:
    Comment:                                Genre: Rock [17]
    $
-   
-   Changelog
-   ---------
+   ```
+## Changelog
    Feb 19 2011
      * Modified the mp3cddb script to use MP3::Info.
-     * Added [Â‰≈ƒ] to formatstr() in mp3cddbtag.
+     * Added [√•√§√Ö√Ñ] to formatstr() in mp3cddbtag.
+     
    Mar 10 2001
      * Modified the mp3cddb script so that it now uses freedb.freedb.org
        as the CDDB server since cddb.com became commercial. Unfortunately
@@ -112,15 +108,13 @@
    Nov 25 1999
      * First release
    
-   Author
-   ------
+## Author
    The mp3cddb script is based on the mp3tocddb script of Meng Weng Wong.
    Minor modifications, this page and the mp3cddb script were made by
    Andras Bali. The original mp3tocddb script by Meng Weng Wong is
    included in the MPEG::MP3Info module for Perl (see Requirements).
    
-   License
-   -------
+## License
    The whole mp3cddb package (including mp3cddb and mp3cddbtag) is free
    software; you can redistribute it and/or modify it under the terms of
    the GNU General Public License as published by the Free Software
@@ -131,8 +125,7 @@
    GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
    for details.
    
-   Contacting me
-   -------------
+## Contacting me
    Please feel free to contact me if you have ideas, suggestions,
    problems, found some bugs, or just want to tell me what you think of
    it.
