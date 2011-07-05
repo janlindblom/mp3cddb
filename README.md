@@ -30,12 +30,12 @@
    
    Additional software required:
    
-     * a Perl interpreter (http://www.perl.com)
-     * the CDDB module for Perl
+   * a Perl interpreter (http://www.perl.com)
+   * the CDDB module for Perl
        (http://www.perl.com/CPAN/authors/id/R/RC/RCAPUTO/CDDB-1.02.tar.gz)
-     * the MPEG::MP3Info module for Perl
+   * the MPEG::MP3Info module for Perl
        (http://www.perl.com/CPAN/authors/id/CNANDOR/MPEG-MP3Info-0.80.tar.gz)
-     * the mp3info program
+   * the mp3info program
        (ftp://ftp.ibiblio.org/pub/linux/apps/sound/mp3-utils/mp3info/mp3info-0.8.2.tgz)
        
    The Perl interpreter and mp3info are likely available in pre-made
